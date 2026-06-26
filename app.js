@@ -1,7 +1,7 @@
 /* ============================================================
    JENIL FURNITURES — app.js
-   Interaction Engine: Scroll reveals, parallax, cursor,
-   material viewer, drag-scroll, counter animation, form UX
+   Interaction Engine: Splash screen, scroll reveals, parallax,
+   cursor, material viewer, drag-scroll, counter animation, form UX
    ============================================================ */
 
 (function () {
@@ -18,6 +18,25 @@
       }
     };
   }
+
+  /* ── 0. Splash Screen ────────────────────────────────────── */
+  (function initSplash() {
+    const splash = document.getElementById('splash-screen');
+    if (!splash) return;
+
+    // Total animation time: logo in (0.2s delay + 0.9s) + bar (0.9s delay + 1.4s) = ~2.6s
+    // Add small buffer so it feels intentional
+    const SPLASH_DURATION = 2800;
+
+    setTimeout(function () {
+      splash.classList.add('hidden');
+
+      // Remove from DOM after fade out so it doesn't block interactions
+      setTimeout(function () {
+        splash.remove();
+      }, 900);
+    }, SPLASH_DURATION);
+  })();
 
   /* ── 1. Custom Cursor ────────────────────────────────────── */
   (function initCursor() {

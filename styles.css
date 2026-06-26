@@ -3,6 +3,75 @@
    Design System & Stylesheet
    ============================================================ */
 
+/* ── Splash Screen ──────────────────────────────────────────── */
+#splash-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--ivory);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s var(--ease-luxury), visibility 0.8s var(--ease-luxury);
+}
+
+#splash-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.splash-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.splash-logo {
+  width: clamp(180px, 30vw, 280px);
+  height: auto;
+  opacity: 0;
+  transform: translateY(16px) scale(0.96);
+  animation: splashLogoIn 0.9s var(--ease-slide) 0.2s forwards;
+}
+
+@keyframes splashLogoIn {
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.splash-bar-wrap {
+  width: 160px;
+  height: 1px;
+  background: var(--stone);
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeIn 0.4s ease 0.8s forwards;
+}
+
+.splash-bar {
+  height: 100%;
+  width: 0%;
+  background: var(--bronze);
+  animation: splashProgress 1.4s var(--ease-slide) 0.9s forwards;
+}
+
+@keyframes splashProgress {
+  to { width: 100%; }
+}
+
+.splash-tagline {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--oak);
+  opacity: 0;
+  animation: fadeIn 0.6s ease 1s forwards;
+}
+
 /* ── Google Fonts ──────────────────────────────────────────── */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=Cormorant:ital,wght@1,300;1,400&display=swap');
 
@@ -167,29 +236,47 @@ body.cursor-label-visible #cursor-label {
   border-bottom: 1px solid rgba(212, 204, 193, 0.4);
 }
 
-.nav-brand {
-  display: flex;
-  flex-direction: column;
-  line-height: 1;
+.nav-brand-logo {
+  display: block;
+  line-height: 0;
+  flex-shrink: 0;
 }
 
-.nav-brand-main {
-  font-family: var(--font-serif);
-  font-weight: 400;
-  font-size: 1.35rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--charcoal);
+.nav-logo {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  transition: opacity var(--transition-sm);
 }
 
-.nav-brand-sub {
-  font-family: var(--font-sans);
-  font-size: 0.6rem;
-  font-weight: 400;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: var(--oak);
-  margin-top: 2px;
+/* White-text logo: visible when nav is transparent (hero) */
+.nav-logo-light {
+  display: block;
+  position: absolute;
+  opacity: 1;
+}
+
+/* Black-text logo: visible after scroll (glass nav) */
+.nav-logo-dark {
+  display: block;
+  opacity: 0;
+}
+
+#main-nav.scrolled .nav-logo-light {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#main-nav.scrolled .nav-logo-dark {
+  opacity: 1;
+}
+
+/* Wrapper needed for the absolute-positioned dual-logo trick */
+.nav-brand-logo {
+  position: relative;
+  height: 42px;
+  /* wide enough for the longest logo */
+  min-width: 160px;
 }
 
 .nav-links {
@@ -1328,6 +1415,59 @@ body.cursor-label-visible #cursor-label {
   flex-shrink: 0;
 }
 
+/* Direct contact in consultation section */
+.consult-direct-contact {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(240,237,231,0.1);
+}
+
+.consult-direct-label {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--oak-light);
+  margin-bottom: 1rem;
+}
+
+.consult-contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.consult-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--ivory);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(240,237,231,0.15);
+  padding: 0.8rem 1.4rem;
+  transition: background var(--transition-sm), border-color var(--transition-sm), color var(--transition-sm);
+}
+
+.consult-contact-btn:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(240,237,231,0.35);
+}
+
+.consult-whatsapp-btn:hover {
+  border-color: #4CAF87;
+  color: #4CAF87;
+}
+
+.consult-contact-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
 /* Form */
 .consultation-form {
   display: flex;
@@ -1452,25 +1592,26 @@ body.cursor-label-visible #cursor-label {
 
 .footer-top {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1.8fr 1fr 1fr 1.4fr;
+  gap: 3.5rem;
   padding-bottom: 4rem;
   border-bottom: 1px solid rgba(255,255,255,0.07);
 }
 
-.footer-brand .nav-brand-main {
-  font-size: 1.5rem;
-  color: var(--ivory);
+.footer-logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  /* The white-text logo works great on the dark footer */
+  filter: brightness(1);
 }
-
-.footer-brand .nav-brand-sub { color: var(--oak); }
 
 .footer-brand-tagline {
   font-family: var(--font-serif-it);
   font-style: italic;
   font-size: 0.95rem;
   color: rgba(240,237,231,0.45);
-  margin-top: 1.2rem;
+  margin-top: 1.5rem;
   line-height: 1.7;
   max-width: 260px;
 }
@@ -1481,6 +1622,85 @@ body.cursor-label-visible #cursor-label {
   font-weight: 300;
   color: rgba(240,237,231,0.35);
   line-height: 1.8;
+  font-style: normal;
+}
+
+/* Owner contact card */
+.footer-owner-col {}
+
+.footer-owner-card {
+  margin-top: 0;
+}
+
+.footer-owner-name {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--ivory);
+  margin-bottom: 0.2rem;
+  line-height: 1.2;
+}
+
+.footer-owner-role {
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--bronze-light);
+  margin-bottom: 1.2rem;
+}
+
+.footer-contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.footer-contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: rgba(240,237,231,0.5);
+  transition: color var(--transition-sm);
+  line-height: 1;
+}
+
+.footer-contact-link:hover {
+  color: var(--ivory);
+}
+
+.footer-whatsapp-link:hover {
+  color: #4CAF87;
+}
+
+.footer-instagram-link:hover {
+  color: var(--oak-light);
+}
+
+.footer-contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border: 1px solid rgba(240,237,231,0.12);
+  color: var(--bronze-light);
+  flex-shrink: 0;
+  transition: border-color var(--transition-sm), color var(--transition-sm);
+}
+
+.footer-contact-link:hover .footer-contact-icon {
+  border-color: rgba(240,237,231,0.3);
+  color: var(--ivory);
+}
+
+.footer-whatsapp-link:hover .footer-contact-icon {
+  color: #4CAF87;
+  border-color: #4CAF87;
 }
 
 .footer-col-title {
@@ -1567,7 +1787,7 @@ body.cursor-label-visible #cursor-label {
   #consultation { grid-template-columns: 1fr; gap: 4rem; }
   .testimonials-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
   .stats-strip { grid-template-columns: repeat(2, 1fr); }
-  .footer-top { grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
 }
 
 @media (max-width: 768px) {
@@ -1581,6 +1801,8 @@ body.cursor-label-visible #cursor-label {
   .nav-links { display: none; }
   .nav-cta { display: none; }
   .nav-hamburger { display: flex; }
+  .nav-brand-logo { min-width: 120px; }
+  .nav-logo { height: 34px; }
 
   .hero-content { padding: 0 1.5rem 4rem; }
   .spaces-header { padding: 0 1.5rem 3rem; flex-direction: column; align-items: flex-start; }

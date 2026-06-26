@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jenil Furnitures — Bespoke Interiors, Crafted On-Site</title>
+  <meta name="description" content="Jenil Furnitures is a luxury interior manufacturing studio specialising in custom on-site woodwork, bespoke cabinetry, modular kitchens, walk-in closets, and complete architectural environments crafted from premium materials." />
+  <meta property="og:title" content="Jenil Furnitures — Bespoke Interiors, Crafted On-Site" />
+  <meta property="og:description" content="Premium on-site manufacturing of luxury wooden interiors, kitchens, wardrobes, and custom architectural spaces." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=Cormorant:ital,wght@1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+  <div id="cursor-label" aria-hidden="true">Explore</div>
+
+  <!-- Mobile Navigation Overlay -->
+  <nav id="mobile-nav" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+    <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close navigation">✕ Close</button>
+    <a href="#featured-spaces" class="mobile-nav-link">Spaces</a>
+    <a href="#materials" class="mobile-nav-link">Materials</a>
+    <a href="#craftsmanship" class="mobile-nav-link">Craftsmanship</a>
+    <a href="#projects" class="mobile-nav-link">Projects</a>
+    <a href="#consultation" class="mobile-nav-link">Consult</a>
+  </nav>
+
+  <!-- Navigation -->
+  <header id="main-nav" role="banner">
+    <a href="#hero" class="nav-brand" aria-label="Jenil Furnitures – Home">
+      <span class="nav-brand-main">Jenil Furnitures</span>
+      <span class="nav-brand-sub">Bespoke Interior Manufacturing</span>
+    </a>
+
+    <nav aria-label="Primary navigation">
+      <ul class="nav-links" role="list">
+        <li><a href="#featured-spaces" id="nav-spaces">Spaces</a></li>
+        <li><a href="#materials" id="nav-materials">Materials</a></li>
+        <li><a href="#craftsmanship" id="nav-craft">Craftsmanship</a></li>
+        <li><a href="#projects" id="nav-projects">Projects</a></li>
+        <li><a href="#design-detail" id="nav-philosophy">Philosophy</a></li>
+      </ul>
+    </nav>
+
+    <a href="#consultation" class="nav-cta" id="nav-consultation-btn">Book Consultation</a>
+
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════════
+         HERO
+    ════════════════════════════════════════════════ -->
+    <section id="hero" aria-label="Hero — Cinematic Interior">
+      <div class="hero-bg" id="hero-parallax-bg" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <p class="hero-eyebrow">Est. 2008 · Surat, India</p>
+        <h1 class="hero-headline">
+          Spaces Crafted<br />for <em>Generations.</em><br />Built On-Site.
+        </h1>
+        <p class="hero-sub">
+          We don't make furniture. We manufacture complete living environments — designed with precision, built by hand, and installed where you live.
+        </p>
+        <div class="hero-cta-row">
+          <a href="#consultation" class="btn-primary" id="hero-cta-primary">
+            Begin Your Project &nbsp;→
+          </a>
+          <a href="#featured-spaces" class="btn-ghost" id="hero-cta-secondary">
+            Explore Spaces &nbsp;↓
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-scroll-indicator" aria-hidden="true">
+        <div class="scroll-line"></div>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         PHILOSOPHY INTRO
+    ════════════════════════════════════════════════ -->
+    <section id="philosophy-intro" aria-labelledby="intro-heading">
+      <div class="philosophy-intro-label-col">
+        <span class="section-label reveal">Our Ethos</span>
+        <div class="divider reveal reveal-delay-1"></div>
+        <p class="section-number reveal reveal-delay-2">01 / Introduction</p>
+      </div>
+      <div>
+        <p class="philosophy-intro-quote reveal">
+          "Every space is a portrait of the people who inhabit it. We build those portraits — in wood, stone, and light."
+        </p>
+        <p class="philosophy-intro-body reveal reveal-delay-2">
+          Jenil Furnitures is not a showroom. We are a manufacturing studio that comes to your site, understands your architecture, and builds your interior from the ground up. From the first sketch to the final finish coat, every element is conceived, crafted, and installed by our team of artisan manufacturers and design specialists.
+        </p>
+        <p class="philosophy-intro-body reveal reveal-delay-3" style="margin-top: 1rem;">
+          We work with natural walnut, white oak, teak veneer, engineered composites, brushed aluminium, ribbed glass, and architectural stone — selected not for trend, but for permanence. Our interiors are built to outlive the homes they inhabit.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         FEATURED SPACES
+    ════════════════════════════════════════════════ -->
+    <section id="featured-spaces" aria-labelledby="spaces-heading">
+      <div class="spaces-header">
+        <div class="spaces-header-left">
+          <span class="section-label reveal">Featured Spaces</span>
+          <h2 id="spaces-heading" class="section-title reveal reveal-delay-2" style="margin-top: 1rem;">
+            Complete <em>Environments,</em><br />Not Individual Pieces
+          </h2>
+        </div>
+        <p class="spaces-header-right reveal reveal-delay-3">
+          Each project is a single, coherent spatial vision — every surface, material, and detail resolved before a single panel is cut.
+        </p>
+      </div>
+
+      <div class="spaces-scroller" id="spaces-scroller" role="list" aria-label="Featured interior spaces">
+
+        <!-- Card 1: TV Unit Living Space -->
+        <article class="space-card" role="listitem" id="space-card-living">
+          <div class="space-card-img" style="background-image: url('assets/hero_interior.png');" aria-hidden="true"></div>
+          <div class="space-card-overlay" aria-hidden="true"></div>
+          <div class="space-card-content">
+            <p class="space-card-category">Living Room</p>
+            <h3 class="space-card-name">The Walnut<br />TV Wall</h3>
+            <p class="space-card-desc">Floor-to-ceiling walnut veneer panels, recessed LED niches, and integrated storage — designed as a single architectural element rather than a piece of furniture.</p>
+            <span class="space-card-arrow">View Details →</span>
+          </div>
+        </article>
+
+        <!-- Card 2: Kitchen -->
+        <article class="space-card" role="listitem" id="space-card-kitchen">
+          <div class="space-card-img" style="background-image: url('assets/featured_kitchen.png');" aria-hidden="true"></div>
+          <div class="space-card-overlay" aria-hidden="true"></div>
+          <div class="space-card-content">
+            <p class="space-card-category">Modular Kitchen</p>
+            <h3 class="space-card-name">The Oak &<br />Marble Kitchen</h3>
+            <p class="space-card-desc">Handleless oak veneer cabinetry, a waterfall marble island, and invisible integrated appliances. Engineered for both beauty and decades of daily use.</p>
+            <span class="space-card-arrow">View Details →</span>
+          </div>
+        </article>
+
+        <!-- Card 3: Closet -->
+        <article class="space-card" role="listitem" id="space-card-closet">
+          <div class="space-card-img" style="background-image: url('assets/featured_closet.png');" aria-hidden="true"></div>
+          <div class="space-card-overlay" aria-hidden="true"></div>
+          <div class="space-card-content">
+            <p class="space-card-category">Walk-in Closet</p>
+            <h3 class="space-card-name">The Private<br />Dressing Suite</h3>
+            <p class="space-card-desc">Full-height walnut wardrobes, backlit display niches, bronze rod rails, and velvet-lined drawer inserts. Personal luxury as architectural design.</p>
+            <span class="space-card-arrow">View Details →</span>
+          </div>
+        </article>
+
+        <!-- Card 4: Bedroom -->
+        <article class="space-card" role="listitem" id="space-card-bedroom">
+          <div class="space-card-img" style="background-image: url('assets/bedroom_interior.png');" aria-hidden="true"></div>
+          <div class="space-card-overlay" aria-hidden="true"></div>
+          <div class="space-card-content">
+            <p class="space-card-category">Bedroom Interior</p>
+            <h3 class="space-card-name">The Oak<br />Sanctuary</h3>
+            <p class="space-card-desc">A floor-to-ceiling headboard wall in light oak, integrated ambient niches, bespoke wardrobes and a floating platform bed — the complete bedroom environment.</p>
+            <span class="space-card-arrow">View Details →</span>
+          </div>
+        </article>
+
+        <!-- Card 5: Villa -->
+        <article class="space-card" role="listitem" id="space-card-villa">
+          <div class="space-card-img" style="background-image: url('assets/project_villa.png');" aria-hidden="true"></div>
+          <div class="space-card-overlay" aria-hidden="true"></div>
+          <div class="space-card-content">
+            <p class="space-card-category">Dining & Living</p>
+            <h3 class="space-card-name">The Lakeside<br />Villa Dining</h3>
+            <p class="space-card-desc">A monumental solid-walnut dining table, bespoke sideboard in book-matched veneer, and architectural pendant lighting — a complete environment for living.</p>
+            <span class="space-card-arrow">View Details →</span>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="spaces-nav" aria-label="Scroll spaces navigation">
+        <button class="space-nav-btn" id="spaces-prev" aria-label="Previous spaces">←</button>
+        <button class="space-nav-btn" id="spaces-next" aria-label="Next spaces">→</button>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         MATERIALS SHOWCASE
+    ════════════════════════════════════════════════ -->
+    <section id="materials" aria-labelledby="materials-heading">
+      <div class="materials-header">
+        <div>
+          <span class="section-label reveal">Material Palette</span>
+          <h2 id="materials-heading" class="section-title reveal reveal-delay-2" style="margin-top: 1rem;">
+            Sourced from<br /><em>the Earth.</em><br />Refined by Hand.
+          </h2>
+        </div>
+        <div>
+          <p class="section-body reveal reveal-delay-2">
+            Every material we use is selected with obsessive attention to grain, density, porosity, and longevity. We work exclusively with architectural-grade materials because our interiors must last lifetimes, not seasons.
+          </p>
+          <div class="divider reveal reveal-delay-3"></div>
+          <p class="section-number reveal reveal-delay-3">02 / Materials</p>
+        </div>
+      </div>
+
+      <div class="materials-grid" id="materials-grid" role="list" aria-label="Material showcase">
+
+        <article class="material-card reveal" role="listitem" id="material-walnut"
+          style="background: #3D2F24;">
+          <div class="material-card-bg" style="background-image: url('assets/material_showcase.png'); background-position: 0% 0%;"></div>
+          <div class="material-card-overlay"></div>
+          <div class="material-card-info">
+            <p class="material-type">Solid Wood</p>
+            <h3 class="material-name">Natural<br />Walnut</h3>
+            <p class="material-detail">Sourced from FSC-certified European forests. Each slab is book-matched for grain continuity and dried for 18 months before fabrication to eliminate warping.</p>
+          </div>
+        </article>
+
+        <article class="material-card reveal reveal-delay-1" role="listitem" id="material-oak"
+          style="background: #9E8164;">
+          <div class="material-card-bg" style="background-image: url('assets/material_showcase.png'); background-position: 100% 0%;"></div>
+          <div class="material-card-overlay"></div>
+          <div class="material-card-info">
+            <p class="material-type">Veneer & Solid</p>
+            <h3 class="material-name">White Oak<br />Veneer</h3>
+            <p class="material-detail">Precision-cut 0.6mm veneers applied to engineered substrates. The grain direction is matched across every panel for a seamless, architectural surface.</p>
+          </div>
+        </article>
+
+        <article class="material-card reveal reveal-delay-2" role="listitem" id="material-stone"
+          style="background: #C4B5A5;">
+          <div class="material-card-bg" style="background-image: url('assets/material_showcase.png'); background-position: 50% 50%;"></div>
+          <div class="material-card-overlay"></div>
+          <div class="material-card-info">
+            <p class="material-type">Natural Stone</p>
+            <h3 class="material-name">Beige<br />Travertine</h3>
+            <p class="material-detail">Quarried from the Tivoli region of Italy. Used for countertops, backsplashes, and feature walls — honed to a matte finish that develops character over time.</p>
+          </div>
+        </article>
+
+        <article class="material-card reveal reveal-delay-1" role="listitem" id="material-bronze"
+          style="background: #6B4A2C;">
+          <div class="material-card-bg" style="background-image: url('assets/material_showcase.png'); background-position: 0% 100%;"></div>
+          <div class="material-card-overlay"></div>
+          <div class="material-card-info">
+            <p class="material-type">Metal</p>
+            <h3 class="material-name">Brushed<br />Bronze</h3>
+            <p class="material-detail">Hand-brushed bronze profiles used for edge banding, handle rails, and architectural accents. Ages gracefully to deepen the warmth of surrounding timber.</p>
+          </div>
+        </article>
+
+        <article class="material-card reveal reveal-delay-2" role="listitem" id="material-glass"
+          style="background: #6B7B7A;">
+          <div class="material-card-bg" style="background-image: url('assets/material_showcase.png'); background-position: 100% 100%;"></div>
+          <div class="material-card-overlay"></div>
+          <div class="material-card-info">
+            <p class="material-type">Architectural Glass</p>
+            <h3 class="material-name">Ribbed<br />Fluted Glass</h3>
+            <p class="material-detail">Custom 10mm reeded glass panels used in cabinet doors, partition walls, and shelving units. Diffuses light while maintaining visual privacy and depth.</p>
+          </div>
+        </article>
+
+        <article class="material-card reveal reveal-delay-3" role="listitem" id="material-aluminium"
+          style="background: #4A4843;">
+          <div class="material-card-bg" style="background-image: url('assets/material_showcase.png'); background-position: 50% 100%;"></div>
+          <div class="material-card-overlay"></div>
+          <div class="material-card-info">
+            <p class="material-type">Metal Profile</p>
+            <h3 class="material-name">Matte Black<br />Aluminium</h3>
+            <p class="material-detail">Powder-coated 6061-T6 aluminium profiles used for framing, dividers, and structural elements. Lightweight, rigid, and architecturally precise.</p>
+          </div>
+        </article>
+
+      </div>
+
+      <img class="materials-feature-img reveal" src="assets/material_showcase.png" alt="Premium material palette — walnut, oak, stone, bronze, glass, and aluminium" loading="lazy" />
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         CRAFTSMANSHIP
+    ════════════════════════════════════════════════ -->
+    <section id="craftsmanship" aria-labelledby="craftsmanship-heading">
+      <div class="craft-layout">
+        <div class="craft-image-col">
+          <img src="assets/craftsmanship_scene.png" alt="Artisan woodworker finishing a custom walnut panel on-site" loading="lazy" />
+        </div>
+        <div class="craft-content-col">
+          <span class="section-label reveal">Our Process</span>
+          <h2 id="craftsmanship-heading" class="section-title reveal reveal-delay-2" style="margin-top: 1rem;">
+            Made Where<br />You <em>Live.</em>
+          </h2>
+          <p class="section-body reveal reveal-delay-3" style="margin-top: 1.5rem;">
+            Every Jenil project is manufactured on-site by our team of specialist craftspeople. We bring our workshop to your space — measuring, cutting, veneering, jointing, and finishing within your home or commercial environment for a perfect architectural fit.
+          </p>
+
+          <div class="craft-steps" role="list">
+
+            <div class="craft-step reveal" role="listitem" id="craft-step-1">
+              <span class="craft-step-num">01</span>
+              <div>
+                <h3 class="craft-step-title">Material Curation & Sourcing</h3>
+                <p class="craft-step-body">We visit timber yards, stone quarries, and metal fabricators with your project brief. Every slab, sheet, and profile is hand-selected for grain, density, and tonal harmony with your space.</p>
+              </div>
+            </div>
+
+            <div class="craft-step reveal reveal-delay-1" role="listitem" id="craft-step-2">
+              <span class="craft-step-num">02</span>
+              <div>
+                <h3 class="craft-step-title">On-site Framework Construction</h3>
+                <p class="craft-step-body">Our master carpenters build the structural skeleton directly in your space — accounting for wall imperfections, floor levels, and architectural nuance that a factory-made unit could never accommodate.</p>
+              </div>
+            </div>
+
+            <div class="craft-step reveal reveal-delay-2" role="listitem" id="craft-step-3">
+              <span class="craft-step-num">03</span>
+              <div>
+                <h3 class="craft-step-title">Precision Veneering & Jointing</h3>
+                <p class="craft-step-body">Veneers are applied in controlled conditions, grain-matched and edge-banded with precision. Each joint is invisible. Each corner is a 45° mitre. No shortcuts. No compromise.</p>
+              </div>
+            </div>
+
+            <div class="craft-step reveal reveal-delay-3" role="listitem" id="craft-step-4">
+              <span class="craft-step-num">04</span>
+              <div>
+                <h3 class="craft-step-title">Hand-finished Surface Coating</h3>
+                <p class="craft-step-body">Final surfaces are hand-sanded through 12 grit stages and finished with either PU lacquer, natural oil wax, or water-based matte coatings — depending on the material and the desired feel.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         PROJECTS
+    ════════════════════════════════════════════════ -->
+    <section id="projects" aria-labelledby="projects-heading">
+      <div class="projects-header">
+        <span class="section-label reveal">Selected Projects</span>
+        <h2 id="projects-heading" class="section-title reveal reveal-delay-2" style="margin-top: 1rem; max-width: 700px;">
+          Environments We've<br />Brought to <em>Life</em>
+        </h2>
+        <p class="section-number reveal reveal-delay-3" style="margin-top: 1rem;">03 / Projects</p>
+      </div>
+
+      <div class="project-showcase" role="list" aria-label="Completed project showcase">
+
+        <article class="project-item reveal-left" role="listitem" id="project-villa-card">
+          <img class="project-img" src="assets/project_villa.png" alt="The Lakeside Villa dining and living space" loading="lazy" />
+          <div class="project-info">
+            <p class="project-location">Surat, Gujarat · 2024</p>
+            <h3 class="project-title">The Lakeside Villa</h3>
+            <p class="project-desc">A 6,000 sq. ft. private residence where every interior element — dining room, master bedroom suite, modular kitchen, and two walk-in closets — was designed and manufactured by our team as a single, coherent spatial language.</p>
+            <div class="project-materials-tags">
+              <span class="tag">Natural Walnut</span>
+              <span class="tag">Travertine Stone</span>
+              <span class="tag">Brushed Bronze</span>
+              <span class="tag">Ribbed Glass</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-item reveal-right" role="listitem" id="project-penthouse-card">
+          <img class="project-img" src="assets/featured_kitchen.png" alt="The Penthouse modular kitchen and open living" loading="lazy" />
+          <div class="project-info">
+            <p class="project-location">Mumbai, Maharashtra · 2023</p>
+            <h3 class="project-title">The Penthouse Canopy</h3>
+            <p class="project-desc">A sky-level penthouse requiring ceiling-height cabinetry, a chef's kitchen with integrated Gaggenau appliances, a full library wall, and a walk-in wardrobe suite — all manufactured and installed within 11 weeks.</p>
+            <div class="project-materials-tags">
+              <span class="tag">White Oak Veneer</span>
+              <span class="tag">Marble Stone</span>
+              <span class="tag">Matte Black Aluminium</span>
+              <span class="tag">Fluted Glass</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Full bleed project feature -->
+      <div class="project-fullbleed reveal" id="project-fullbleed" role="region" aria-label="Featured project — The Private Retreat">
+        <img src="assets/bedroom_interior.png" alt="The Private Retreat — custom bedroom interior in light oak" loading="lazy" />
+        <div class="project-fullbleed-caption">
+          <p class="project-location">Ahmedabad, Gujarat · 2025</p>
+          <h3 class="project-title">The Private Retreat</h3>
+          <p>A master bedroom suite designed as an architectural mediation on rest. The headboard wall, integrated bedside niche system, and full wardrobe suite form a single unified structure in light oak veneer.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         DESIGN DETAIL
+    ════════════════════════════════════════════════ -->
+    <section id="design-detail" aria-labelledby="detail-heading">
+      <div class="detail-layout">
+
+        <div class="detail-content">
+          <span class="section-label reveal">Design Philosophy</span>
+          <h2 id="detail-heading" class="section-title reveal reveal-delay-2" style="margin-top: 1rem;">
+            The Detail<br />Is the <em>Design.</em>
+          </h2>
+          <p class="section-body reveal reveal-delay-3">
+            We believe architecture exists at the scale of the hand. The quality of a space is felt in the moment you open a drawer, run your fingers across a panel, or observe how light falls across a grain. We obsess over every millimetre so you never have to.
+          </p>
+
+          <div class="detail-features" role="list">
+
+            <div class="detail-feature reveal reveal-delay-1" role="listitem" id="feature-softclose">
+              <div class="detail-feature-icon" aria-hidden="true">⌀</div>
+              <div>
+                <p class="detail-feature-title">Silent Soft-Close Mechanisms</p>
+                <p class="detail-feature-body">Every door and drawer uses German Blum or Hettich hardware. No slamming, no bounce — just a quiet, controlled close that signals quality every single time.</p>
+              </div>
+            </div>
+
+            <div class="detail-feature reveal reveal-delay-2" role="listitem" id="feature-grain">
+              <div class="detail-feature-icon" aria-hidden="true">≋</div>
+              <div>
+                <p class="detail-feature-title">Book-matched Grain Continuity</p>
+                <p class="detail-feature-body">Where veneers meet, we mirror the grain — so a cabinet looks like a single slice of tree, not an assembly of panels. This requires hand-sorting of every sheet before installation.</p>
+              </div>
+            </div>
+
+            <div class="detail-feature reveal reveal-delay-3" role="listitem" id="feature-lighting">
+              <div class="detail-feature-icon" aria-hidden="true">◯</div>
+              <div>
+                <p class="detail-feature-title">Integrated Architectural Lighting</p>
+                <p class="detail-feature-body">LED cove systems, recessed niche lighting, and under-cabinet strips are integrated into the structure itself — no exposed cables, no afterthought fixtures.</p>
+              </div>
+            </div>
+
+            <div class="detail-feature reveal reveal-delay-4" role="listitem" id="feature-joinery">
+              <div class="detail-feature-icon" aria-hidden="true">◫</div>
+              <div>
+                <p class="detail-feature-title">Precision Joinery & Edge Profiles</p>
+                <p class="detail-feature-body">Corners are hand-mitered to 45°. Edges are solid wood-banded and sanded flush. The boundary between two surfaces is not a gap — it's a line of intention.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="detail-image-col" aria-label="Detail imagery">
+          <img class="detail-img reveal-left" src="assets/craftsmanship_scene.png" alt="Craftsman at work on a precision veneer panel" loading="lazy" />
+          <img class="detail-img reveal-right reveal-delay-2" src="assets/featured_closet.png" alt="Walk-in closet with bronze rails and soft lighting" loading="lazy" />
+          <img class="detail-img reveal-right reveal-delay-3" src="assets/featured_kitchen.png" alt="Kitchen cabinetry precision detail" loading="lazy" />
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         TESTIMONIALS & STATS
+    ════════════════════════════════════════════════ -->
+    <section id="testimonials" aria-labelledby="testimonials-heading">
+      <div class="testimonials-header">
+        <span class="section-label reveal">Client Stories</span>
+        <h2 id="testimonials-heading" class="section-title reveal reveal-delay-2" style="margin-top: 1rem; font-size: clamp(2rem, 3.5vw, 3.5rem);">
+          Built for Lives Well Lived
+        </h2>
+        <div class="divider"></div>
+        <p class="section-number reveal reveal-delay-3">04 / Trust</p>
+      </div>
+
+      <div class="testimonials-grid" role="list" aria-label="Client testimonials">
+
+        <article class="testimonial-card reveal" role="listitem" id="testimonial-1">
+          <span class="testimonial-mark" aria-hidden="true">"</span>
+          <blockquote class="testimonial-quote">
+            "The kitchen Jenil built for us is not furniture — it is architecture. The precision of the joinery, the integration of the appliances, the way the light catches the stone. It defines our home."
+          </blockquote>
+          <div class="testimonial-author">
+            <span class="testimonial-name">Riya & Aditya Mehta</span>
+            <span class="testimonial-role">Private Residence · Surat</span>
+          </div>
+        </article>
+
+        <article class="testimonial-card reveal reveal-delay-2" role="listitem" id="testimonial-2">
+          <span class="testimonial-mark" aria-hidden="true">"</span>
+          <blockquote class="testimonial-quote">
+            "We've worked with interior studios across Mumbai and London. Jenil is categorically different. Their on-site manufacturing means every panel fits perfectly. Not close — perfectly."
+          </blockquote>
+          <div class="testimonial-author">
+            <span class="testimonial-name">Kavya Nair</span>
+            <span class="testimonial-role">Interior Architect · Mumbai</span>
+          </div>
+        </article>
+
+        <article class="testimonial-card reveal reveal-delay-3" role="listitem" id="testimonial-3">
+          <span class="testimonial-mark" aria-hidden="true">"</span>
+          <blockquote class="testimonial-quote">
+            "The walnut wardrobe suite in our master bedroom is the single finest piece of craftsmanship I've ever owned. Ten years later, I would not change a single detail."
+          </blockquote>
+          <div class="testimonial-author">
+            <span class="testimonial-name">Harshad Parikh</span>
+            <span class="testimonial-role">Penthouse Residence · Ahmedabad</span>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="stats-strip" aria-label="Company statistics">
+        <div class="reveal">
+          <p class="stat-value"><span class="stat-count" data-target="320">0</span><span class="stat-unit">+</span></p>
+          <p class="stat-label">Projects Completed</p>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <p class="stat-value"><span class="stat-count" data-target="17">0</span></p>
+          <p class="stat-label">Years of On-site Expertise</p>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <p class="stat-value"><span class="stat-count" data-target="8">0</span></p>
+          <p class="stat-label">Cities Served</p>
+        </div>
+        <div class="reveal reveal-delay-3">
+          <p class="stat-value"><span class="stat-count" data-target="100">0</span><span class="stat-unit">%</span></p>
+          <p class="stat-label">On-site Manufacturing</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         CONSULTATION CTA
+    ════════════════════════════════════════════════ -->
+    <section id="consultation" aria-labelledby="consult-heading">
+      <div class="consultation-content">
+        <span class="section-label reveal">Begin Your Project</span>
+        <h2 id="consult-heading" class="section-title reveal reveal-delay-2" style="margin-top: 1rem;">
+          Let's Build<br />Something <em>Permanent.</em>
+        </h2>
+        <p class="consultation-text reveal reveal-delay-3">
+          Every great interior begins with a conversation. Tell us about your space, your vision, and the materials that resonate with you — and we'll come to you.
+        </p>
+
+        <ul class="consultation-points reveal reveal-delay-4">
+          <li>Free on-site design consultation</li>
+          <li>Custom material samples presented at your home</li>
+          <li>3D visualisation of your space before manufacturing begins</li>
+          <li>End-to-end project management and installation</li>
+        </ul>
+      </div>
+
+      <div>
+        <form class="consultation-form reveal reveal-delay-2" id="consultation-form" novalidate aria-label="Book a consultation">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="consult-name">Your Name</label>
+              <input class="form-input" type="text" id="consult-name" name="name" placeholder="Aarav Mehta" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="consult-phone">Phone Number</label>
+              <input class="form-input" type="tel" id="consult-phone" name="phone" placeholder="+91 98765 43210" required autocomplete="tel" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="consult-email">Email Address</label>
+            <input class="form-input" type="email" id="consult-email" name="email" placeholder="aarav@residence.com" required autocomplete="email" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="consult-project-type">Project Type</label>
+            <select class="form-select" id="consult-project-type" name="project_type" required>
+              <option value="" disabled selected>Select your project…</option>
+              <option value="living-room">Living Room & TV Unit</option>
+              <option value="kitchen">Modular Kitchen</option>
+              <option value="wardrobe">Wardrobe / Walk-in Closet</option>
+              <option value="bedroom">Complete Bedroom Interior</option>
+              <option value="office">Office Space</option>
+              <option value="dining">Dining Room</option>
+              <option value="full-home">Full Home Interiors</option>
+              <option value="commercial">Commercial Space</option>
+              <option value="other">Custom / Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="consult-message">Tell Us About Your Vision</label>
+            <textarea class="form-textarea" id="consult-message" name="message" placeholder="Describe your space, style preferences, materials you love, and the timeline you have in mind…"></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit" id="consult-submit-btn">
+            Request a Consultation &nbsp;→
+          </button>
+        </form>
+
+        <div class="form-success" id="form-success" role="status" aria-live="polite">
+          <div class="success-icon" aria-hidden="true">✦</div>
+          <p>Thank you. Our design team will reach out within 24 hours to arrange your complimentary on-site consultation.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════ -->
+  <footer id="footer" role="contentinfo">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="nav-brand">
+          <span class="nav-brand-main">Jenil Furnitures</span>
+          <span class="nav-brand-sub">Bespoke Interior Manufacturing</span>
+        </div>
+        <p class="footer-brand-tagline">
+          "We don't manufacture furniture. We build the spaces that define how you live."
+        </p>
+        <address class="footer-brand-address">
+          Studio Address:<br />
+          12, Textile Market, Ring Road<br />
+          Surat, Gujarat — 395 002<br />
+          India<br /><br />
+          <a href="tel:+919876543210">+91 98765 43210</a><br />
+          <a href="mailto:studio@jenilfurnitures.com">studio@jenilfurnitures.com</a>
+        </address>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Spaces</p>
+        <ul class="footer-links" role="list">
+          <li><a href="#featured-spaces">Living Rooms</a></li>
+          <li><a href="#featured-spaces">Modular Kitchens</a></li>
+          <li><a href="#featured-spaces">Wardrobes & Closets</a></li>
+          <li><a href="#featured-spaces">Bedroom Interiors</a></li>
+          <li><a href="#featured-spaces">Dining Rooms</a></li>
+          <li><a href="#featured-spaces">Office Spaces</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Studio</p>
+        <ul class="footer-links" role="list">
+          <li><a href="#materials">Materials</a></li>
+          <li><a href="#craftsmanship">Craftsmanship</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#design-detail">Design Philosophy</a></li>
+          <li><a href="#testimonials">Client Stories</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Connect</p>
+        <ul class="footer-links" role="list">
+          <li><a href="#consultation">Book Consultation</a></li>
+          <li><a href="https://instagram.com" rel="noopener noreferrer" target="_blank">Instagram</a></li>
+          <li><a href="https://houzz.com" rel="noopener noreferrer" target="_blank">Houzz</a></li>
+          <li><a href="https://pinterest.com" rel="noopener noreferrer" target="_blank">Pinterest</a></li>
+          <li><a href="mailto:studio@jenilfurnitures.com">Email Studio</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Jenil Furnitures. All rights reserved. Crafted with intention.</p>
+      <nav class="footer-socials" aria-label="Social media links">
+        <a href="https://instagram.com" rel="noopener noreferrer" target="_blank">Instagram</a>
+        <a href="https://houzz.com" rel="noopener noreferrer" target="_blank">Houzz</a>
+        <a href="https://pinterest.com" rel="noopener noreferrer" target="_blank">Pinterest</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

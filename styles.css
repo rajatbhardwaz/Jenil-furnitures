@@ -735,6 +735,13 @@ body.cursor-label-visible #cursor-label {
 }
 
 /* ── Compact Info Strips (Materials / Craftsmanship / Philosophy) ── */
+
+/* Strip the section-level padding so compact-strip fills edge-to-edge */
+#materials,
+#craftsmanship {
+  padding: 0;
+}
+
 .compact-strip {
   background: var(--ivory);
   border-top: 1px solid var(--stone);

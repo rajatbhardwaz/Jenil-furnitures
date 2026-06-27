@@ -194,74 +194,23 @@
     });
   })();
 
-  /* ── 6. Spaces Horizontal Drag-Scroll ────────────────────── */
-  (function initSpacesScroller() {
-    const scroller = document.getElementById('spaces-scroller');
-    const prevBtn  = document.getElementById('spaces-prev');
-    const nextBtn  = document.getElementById('spaces-next');
-    if (!scroller) return;
+  /* ── 6. Spaces Tape Marquee — pause on hover ─────────────── */
+  (function initSpacesTape() {
+    const track = document.getElementById('spaces-track');
+    if (!track) return;
 
-    let isDown = false;
-    let startX = 0;
-    let scrollLeft = 0;
-
-    scroller.addEventListener('mousedown', function (e) {
-      isDown = true;
-      scroller.style.cursor = 'grabbing';
-      startX = e.pageX - scroller.offsetLeft;
-      scrollLeft = scroller.scrollLeft;
-    });
-
-    scroller.addEventListener('mouseleave', function () {
-      isDown = false;
-      scroller.style.cursor = 'grab';
-    });
-
-    scroller.addEventListener('mouseup', function () {
-      isDown = false;
-      scroller.style.cursor = 'grab';
-    });
-
-    scroller.addEventListener('mousemove', function (e) {
-      if (!isDown) return;
-      e.preventDefault();
-      const x    = e.pageX - scroller.offsetLeft;
-      const walk = (x - startX) * 1.5;
-      scroller.scrollLeft = scrollLeft - walk;
-    });
-
-    // Touch support
+    // CSS handles the animation; JS just offers pause-on-hover
+    // (also handled by CSS :hover but this adds touch support)
     let touchStartX = 0;
-    let touchScrollLeft = 0;
 
-    scroller.addEventListener('touchstart', function (e) {
-      touchStartX    = e.touches[0].pageX;
-      touchScrollLeft = scroller.scrollLeft;
+    track.parentElement.addEventListener('touchstart', function (e) {
+      touchStartX = e.touches[0].clientX;
+      track.style.animationPlayState = 'paused';
     }, { passive: true });
 
-    scroller.addEventListener('touchmove', function (e) {
-      const x    = e.touches[0].pageX;
-      const walk = (touchStartX - x) * 1.2;
-      scroller.scrollLeft = touchScrollLeft + walk;
+    track.parentElement.addEventListener('touchend', function () {
+      track.style.animationPlayState = 'running';
     }, { passive: true });
-
-    // Arrow buttons
-    function getCardWidth() {
-      const card = scroller.querySelector('.space-card');
-      return card ? card.offsetWidth + 2 : 400;
-    }
-
-    if (prevBtn) {
-      prevBtn.addEventListener('click', function () {
-        scroller.scrollBy({ left: -getCardWidth(), behavior: 'smooth' });
-      });
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener('click', function () {
-        scroller.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
-      });
-    }
   })();
 
   /* ── 7. Animated Counters ────────────────────────────────── */

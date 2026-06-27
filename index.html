@@ -110,22 +110,10 @@
          PHILOSOPHY INTRO
     ════════════════════════════════════════════════ -->
     <section id="philosophy-intro" aria-labelledby="intro-heading">
-      <div class="philosophy-intro-label-col">
-        <span class="section-label reveal">Our Ethos</span>
-        <div class="divider reveal reveal-delay-1"></div>
-        <p class="section-number reveal reveal-delay-2">01 / Introduction</p>
-      </div>
-      <div>
-        <p class="philosophy-intro-quote reveal">
-          "Every space is a portrait of the people who inhabit it. We build those portraits — in wood, stone, and light."
-        </p>
-        <p class="philosophy-intro-body reveal reveal-delay-2">
-          Jenil Furnitures is not a showroom. We are a manufacturing studio that comes to your site, understands your architecture, and builds your interior from the ground up. From the first sketch to the final finish coat, every element is conceived, crafted, and installed by our team of artisan manufacturers and design specialists.
-        </p>
-        <p class="philosophy-intro-body reveal reveal-delay-3" style="margin-top: 1rem;">
-          We work with natural walnut, white oak, teak veneer, engineered composites, brushed aluminium, ribbed glass, and architectural stone — selected not for trend, but for permanence. Our interiors are built to outlive the homes they inhabit.
-        </p>
-      </div>
+      <span class="section-label reveal">Our Ethos</span>
+      <p id="intro-heading" class="philosophy-statement reveal reveal-delay-1">
+        We don't make furniture.<br>We build the spaces you live in.
+      </p>
     </section>
 
     <!-- ═══════════════════════════════════════════════
@@ -144,70 +132,115 @@
         </p>
       </div>
 
-      <div class="spaces-scroller" id="spaces-scroller" role="list" aria-label="Featured interior spaces">
+      <!-- Tape marquee track — cards duplicated for seamless infinite scroll -->
+      <div class="spaces-scroller" id="spaces-scroller" aria-label="Featured interior spaces">
+        <div class="spaces-track" id="spaces-track">
 
-        <article class="space-card" role="listitem" id="space-card-living">
-          <div class="space-card-img" style="background-image: url('./assets/hero_interior.png');" aria-hidden="true"></div>
-          <div class="space-card-overlay" aria-hidden="true"></div>
-          <div class="space-card-content">
-            <p class="space-card-category">Living Room</p>
-            <h3 class="space-card-name">The Walnut<br />TV Wall</h3>
-            <p class="space-card-desc">Floor-to-ceiling walnut veneer panels, recessed LED niches, and integrated storage — designed as a single architectural element rather than a piece of furniture.</p>
-            <span class="space-card-arrow">View Details →</span>
-          </div>
-        </article>
+          <!-- ── Original set ── -->
+          <article class="space-card" role="listitem" id="space-card-living">
+            <div class="space-card-img" style="background-image: url('./assets/hero_interior.png');" aria-hidden="true"></div>
+            <div class="space-card-overlay" aria-hidden="true"></div>
+            <div class="space-card-content">
+              <p class="space-card-category">Living Room</p>
+              <h3 class="space-card-name">The Walnut<br />TV Wall</h3>
+              <p class="space-card-desc">Floor-to-ceiling walnut veneer panels, recessed LED niches, and integrated storage — designed as a single architectural element rather than a piece of furniture.</p>
+              <span class="space-card-arrow">View Details →</span>
+            </div>
+          </article>
 
-        <article class="space-card" role="listitem" id="space-card-kitchen">
-          <div class="space-card-img" style="background-image: url('./assets/featured_kitchen.png');" aria-hidden="true"></div>
-          <div class="space-card-overlay" aria-hidden="true"></div>
-          <div class="space-card-content">
-            <p class="space-card-category">Modular Kitchen</p>
-            <h3 class="space-card-name">The Oak &<br />Marble Kitchen</h3>
-            <p class="space-card-desc">Handleless oak veneer cabinetry, a waterfall marble island, and invisible integrated appliances. Engineered for both beauty and decades of daily use.</p>
-            <span class="space-card-arrow">View Details →</span>
-          </div>
-        </article>
+          <article class="space-card" role="listitem" id="space-card-kitchen">
+            <div class="space-card-img" style="background-image: url('./assets/featured_kitchen.png');" aria-hidden="true"></div>
+            <div class="space-card-overlay" aria-hidden="true"></div>
+            <div class="space-card-content">
+              <p class="space-card-category">Modular Kitchen</p>
+              <h3 class="space-card-name">The Oak &<br />Marble Kitchen</h3>
+              <p class="space-card-desc">Handleless oak veneer cabinetry, a waterfall marble island, and invisible integrated appliances. Engineered for both beauty and decades of daily use.</p>
+              <span class="space-card-arrow">View Details →</span>
+            </div>
+          </article>
 
-        <article class="space-card" role="listitem" id="space-card-closet">
-          <div class="space-card-img" style="background-image: url('./assets/featured_closet.png');" aria-hidden="true"></div>
-          <div class="space-card-overlay" aria-hidden="true"></div>
-          <div class="space-card-content">
-            <p class="space-card-category">Walk-in Closet</p>
-            <h3 class="space-card-name">The Private<br />Dressing Suite</h3>
-            <p class="space-card-desc">Full-height walnut wardrobes, backlit display niches, bronze rod rails, and velvet-lined drawer inserts. Personal luxury as architectural design.</p>
-            <span class="space-card-arrow">View Details →</span>
-          </div>
-        </article>
+          <article class="space-card" role="listitem" id="space-card-closet">
+            <div class="space-card-img" style="background-image: url('./assets/featured_closet.png');" aria-hidden="true"></div>
+            <div class="space-card-overlay" aria-hidden="true"></div>
+            <div class="space-card-content">
+              <p class="space-card-category">Walk-in Closet</p>
+              <h3 class="space-card-name">The Private<br />Dressing Suite</h3>
+              <p class="space-card-desc">Full-height walnut wardrobes, backlit display niches, bronze rod rails, and velvet-lined drawer inserts. Personal luxury as architectural design.</p>
+              <span class="space-card-arrow">View Details →</span>
+            </div>
+          </article>
 
-        <article class="space-card" role="listitem" id="space-card-bedroom">
-          <div class="space-card-img" style="background-image: url('./assets/bedroom_interior.png');" aria-hidden="true"></div>
-          <div class="space-card-overlay" aria-hidden="true"></div>
-          <div class="space-card-content">
-            <p class="space-card-category">Bedroom Interior</p>
-            <h3 class="space-card-name">The Oak<br />Sanctuary</h3>
-            <p class="space-card-desc">A floor-to-ceiling headboard wall in light oak, integrated ambient niches, bespoke wardrobes and a floating platform bed — the complete bedroom environment.</p>
-            <span class="space-card-arrow">View Details →</span>
-          </div>
-        </article>
+          <article class="space-card" role="listitem" id="space-card-bedroom">
+            <div class="space-card-img" style="background-image: url('./assets/bedroom_interior.png');" aria-hidden="true"></div>
+            <div class="space-card-overlay" aria-hidden="true"></div>
+            <div class="space-card-content">
+              <p class="space-card-category">Bedroom Interior</p>
+              <h3 class="space-card-name">The Oak<br />Sanctuary</h3>
+              <p class="space-card-desc">A floor-to-ceiling headboard wall in light oak, integrated ambient niches, bespoke wardrobes and a floating platform bed — the complete bedroom environment.</p>
+              <span class="space-card-arrow">View Details →</span>
+            </div>
+          </article>
 
-        <article class="space-card" role="listitem" id="space-card-villa">
-          <div class="space-card-img" style="background-image: url('./assets/project_villa.png');" aria-hidden="true"></div>
-          <div class="space-card-overlay" aria-hidden="true"></div>
-          <div class="space-card-content">
-            <p class="space-card-category">Dining & Living</p>
-            <h3 class="space-card-name">The Lakeside<br />Villa Dining</h3>
-            <p class="space-card-desc">A monumental solid-walnut dining table, bespoke sideboard in book-matched veneer, and architectural pendant lighting — a complete environment for living.</p>
-            <span class="space-card-arrow">View Details →</span>
-          </div>
-        </article>
+          <article class="space-card" role="listitem" id="space-card-villa">
+            <div class="space-card-img" style="background-image: url('./assets/project_villa.png');" aria-hidden="true"></div>
+            <div class="space-card-overlay" aria-hidden="true"></div>
+            <div class="space-card-content">
+              <p class="space-card-category">Dining &amp; Living</p>
+              <h3 class="space-card-name">The Lakeside<br />Villa Dining</h3>
+              <p class="space-card-desc">A monumental solid-walnut dining table, bespoke sideboard in book-matched veneer, and architectural pendant lighting — a complete environment for living.</p>
+              <span class="space-card-arrow">View Details →</span>
+            </div>
+          </article>
 
-      </div>
+          <!-- ── Clone set (for seamless loop) ── -->
+          <article class="space-card" aria-hidden="true">
+            <div class="space-card-img" style="background-image: url('./assets/hero_interior.png');"></div>
+            <div class="space-card-overlay"></div>
+            <div class="space-card-content">
+              <p class="space-card-category">Living Room</p>
+              <h3 class="space-card-name">The Walnut<br />TV Wall</h3>
+            </div>
+          </article>
 
-      <div class="spaces-nav" aria-label="Scroll spaces navigation">
-        <button class="space-nav-btn" id="spaces-prev" aria-label="Previous spaces">←</button>
-        <button class="space-nav-btn" id="spaces-next" aria-label="Next spaces">→</button>
-      </div>
-    </section>
+          <article class="space-card" aria-hidden="true">
+            <div class="space-card-img" style="background-image: url('./assets/featured_kitchen.png');"></div>
+            <div class="space-card-overlay"></div>
+            <div class="space-card-content">
+              <p class="space-card-category">Modular Kitchen</p>
+              <h3 class="space-card-name">The Oak &<br />Marble Kitchen</h3>
+            </div>
+          </article>
+
+          <article class="space-card" aria-hidden="true">
+            <div class="space-card-img" style="background-image: url('./assets/featured_closet.png');"></div>
+            <div class="space-card-overlay"></div>
+            <div class="space-card-content">
+              <p class="space-card-category">Walk-in Closet</p>
+              <h3 class="space-card-name">The Private<br />Dressing Suite</h3>
+            </div>
+          </article>
+
+          <article class="space-card" aria-hidden="true">
+            <div class="space-card-img" style="background-image: url('./assets/bedroom_interior.png');"></div>
+            <div class="space-card-overlay"></div>
+            <div class="space-card-content">
+              <p class="space-card-category">Bedroom Interior</p>
+              <h3 class="space-card-name">The Oak<br />Sanctuary</h3>
+            </div>
+          </article>
+
+          <article class="space-card" aria-hidden="true">
+            <div class="space-card-img" style="background-image: url('./assets/project_villa.png');"></div>
+            <div class="space-card-overlay"></div>
+            <div class="space-card-content">
+              <p class="space-card-category">Dining &amp; Living</p>
+              <h3 class="space-card-name">The Lakeside<br />Villa Dining</h3>
+            </div>
+          </article>
+
+        </div><!-- /.spaces-track -->
+      </div><!-- /.spaces-scroller -->
+
 
     <!-- ═══════════════════════════════════════════════
          MATERIALS SHOWCASE

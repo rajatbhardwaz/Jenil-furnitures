@@ -253,7 +253,7 @@ body.cursor-label-visible #cursor-label {
 }
 
 .nav-logo {
-  height: 52px;
+  height: 68px;
   width: auto;
   object-fit: contain;
   transition: opacity var(--transition-sm);
@@ -272,8 +272,8 @@ body.cursor-label-visible #cursor-label {
 /* Wrapper */
 .nav-brand-logo {
   position: relative;
-  height: 52px;
-  min-width: 180px;
+  height: 68px;
+  min-width: 200px;
 }
 
 .nav-links {
@@ -322,6 +322,7 @@ body.cursor-label-visible #cursor-label {
   background: var(--charcoal);
   padding: 0.8rem 1.8rem;
   border: 1px solid var(--charcoal);
+  border-radius: 100px;
   transition: background var(--transition-sm), color var(--transition-sm), border-color var(--transition-sm);
 }
 
@@ -786,11 +787,13 @@ body.cursor-label-visible #cursor-label {
 .spaces-scroller::-webkit-scrollbar { display: none; }
 .spaces-scroller:active { cursor: grabbing; }
 
+/* ── Space Card ── */
 .space-card {
   flex: 0 0 auto;
-  width: clamp(320px, 40vw, 560px);
-  height: 75vh;
-  min-height: 500px;
+  /* Each card is 38vw wide so ~2.5 cards are always visible, giving the tape feel */
+  width: clamp(300px, 38vw, 540px);
+  height: 78vh;
+  min-height: 520px;
   position: relative;
   overflow: hidden;
 }
@@ -1909,8 +1912,8 @@ body.cursor-label-visible #cursor-label {
   .nav-links  { display: none; }
   .nav-cta    { display: none; }
   .nav-hamburger { display: flex; }
-  .nav-brand-logo { min-width: 100px; }
-  .nav-logo { height: 36px; }
+  .nav-brand-logo { min-width: 110px; }
+  .nav-logo { height: 48px; }
 
   /* Hero */
   #hero { min-height: 580px; align-items: flex-end; }

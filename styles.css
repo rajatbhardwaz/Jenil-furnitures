@@ -399,94 +399,75 @@ body.cursor-label-visible #cursor-label {
   overflow: hidden;
 }
 
-/* ── Hero Motion Gradient Background ── */
+/* ── Hero Static Gradient Background ── */
+
+/*
+  3-layer approach — completely static, no animation:
+  1. Base: deep charcoal-walnut linear gradient (top-right warm → bottom-left dark)
+  2. Bloom: soft radial light pools (ambient warmth, no harsh edges)
+  3. Scrim: bottom vignette to keep text readable
+*/
+
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: var(--charcoal);
-  overflow: hidden;
+  /* Base canvas: very dark warm-toned gradient, light source top-right */
+  background:
+    linear-gradient(
+      135deg,
+      #241C17 0%,
+      #1E1916 35%,
+      #161412 65%,
+      #0E0D0C 100%
+    );
 }
 
-/* Layer 1: base animated gradient */
+/* Layer 2: Static ambient radial light pools */
 .hero-bg::before {
-  content: '';
-  position: absolute;
-  inset: -40%;
-  background: conic-gradient(
-    from 0deg at 30% 60%,
-    #1A1A18 0deg,
-    #3D2F24 60deg,
-    #5C4637 100deg,
-    #8B6340 140deg,
-    #3D2F24 190deg,
-    #2E2E2A 240deg,
-    #1A1A18 300deg,
-    #3D2F24 340deg,
-    #1A1A18 360deg
-  );
-  animation: heroGradientSpin 18s linear infinite;
-  will-change: transform;
-  opacity: 0.85;
-}
-
-/* Layer 2: floating radial bloom */
-.hero-bg::after {
   content: '';
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 20% 50%, rgba(139,99,64,0.30) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 80% at 75% 20%, rgba(94,70,55,0.20) 0%, transparent 55%),
-    radial-gradient(ellipse 100% 50% at 50% 100%, rgba(26,26,24,0.95) 0%, transparent 60%),
-    radial-gradient(ellipse 70% 40% at 50% 0%,   rgba(26,26,24,0.60) 0%, transparent 50%);
-  animation: heroBloomFloat 10s ease-in-out infinite alternate;
-  will-change: transform;
+    /* Warm amber glow — upper left, like a lamp off-frame */
+    radial-gradient(ellipse 70% 55% at 15% 30%,  rgba(139, 99, 64, 0.28) 0%, transparent 65%),
+    /* Secondary walnut warmth — centre right */
+    radial-gradient(ellipse 50% 70% at 80% 25%,  rgba(92, 70, 55, 0.18) 0%, transparent 55%),
+    /* Deep shadow pool — lower right */
+    radial-gradient(ellipse 60% 50% at 85% 85%,  rgba(10, 8, 6, 0.55)   0%, transparent 60%),
+    /* Subtle bronze highlight — lower centre-left */
+    radial-gradient(ellipse 40% 35% at 35% 90%,  rgba(139, 99, 64, 0.12) 0%, transparent 55%);
 }
 
-/* Layer 3: moving spotlight orb */
-.hero-bg-orb {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.hero-bg-orb::before {
+/* Layer 3: Bottom scrim — keeps all text legible */
+.hero-bg::after {
   content: '';
-  position: absolute;
-  width: 55vmax;
-  height: 55vmax;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(176,128,80,0.18) 0%, rgba(139,99,64,0.08) 40%, transparent 70%);
-  top: -10%;
-  left: -10%;
-  animation: heroOrbDrift 14s ease-in-out infinite alternate;
-  will-change: transform;
-}
-
-.hero-bg-orb::after {
-  content: '';
-  position: absolute;
-  width: 40vmax;
-  height: 40vmax;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(158,129,100,0.12) 0%, transparent 65%);
-  bottom: 5%;
-  right: -5%;
-  animation: heroOrbDrift2 17s ease-in-out infinite alternate;
-  will-change: transform;
-}
-
-/* bottom scrim so text stays legible */
-.hero-bg-scrim {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(26,26,24,0.10) 0%,
-    rgba(26,26,24,0.00) 25%,
-    rgba(26,26,24,0.30) 60%,
-    rgba(26,26,24,0.82) 100%
+    rgba(14,13,12,0.05)  0%,
+    rgba(14,13,12,0.00) 20%,
+    rgba(14,13,12,0.20) 55%,
+    rgba(14,13,12,0.78) 100%
   );
+}
+
+/* Orb element kept in HTML — make it invisible */
+.hero-bg-orb {
+  display: none;
+}
+
+/* bottom scrim overlay div (static) */
+.hero-bg-scrim {
+  position: absolute;
+  inset: 0;
+  /* Extra left-side vignette so text column has darker bg */
+  background:
+    linear-gradient(
+      to right,
+      rgba(10,8,6,0.30) 0%,
+      rgba(10,8,6,0.00) 55%
+    );
   pointer-events: none;
 }
 

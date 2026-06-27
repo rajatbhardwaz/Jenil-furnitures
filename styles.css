@@ -734,6 +734,174 @@ body.cursor-label-visible #cursor-label {
   max-width: 700px;
 }
 
+/* ── Compact Info Strips (Materials / Craftsmanship / Philosophy) ── */
+.compact-strip {
+  background: var(--ivory);
+  border-top: 1px solid var(--stone);
+  border-bottom: 1px solid var(--stone);
+  padding: 2.5rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.compact-strip--dark {
+  background: var(--charcoal);
+  border-color: rgba(255,255,255,0.07);
+}
+
+.compact-strip-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-width: 220px;
+}
+
+.compact-strip-title {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: clamp(1rem, 1.6vw, 1.4rem);
+  color: var(--charcoal);
+  line-height: 1.3;
+  max-width: 360px;
+}
+
+.compact-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  justify-content: flex-end;
+}
+
+.compact-tag-list li {
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--charcoal-soft);
+  border: 1px solid var(--stone);
+  padding: 0.4rem 0.9rem;
+  transition: border-color var(--transition-sm), color var(--transition-sm);
+}
+
+.compact-tag-list li:hover {
+  border-color: var(--bronze);
+  color: var(--bronze);
+}
+
+.compact-tag-list--light li {
+  color: rgba(240,237,231,0.55);
+  border-color: rgba(255,255,255,0.12);
+}
+
+.compact-tag-list--light li:hover {
+  border-color: var(--oak-light);
+  color: var(--oak-light);
+}
+
+/* ── Projects Minimal Section ─────────────────────────────────── */
+#projects {
+  background: var(--ivory-dark);
+  padding: var(--space-xl) 3rem;
+}
+
+.projects-minimal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.projects-minimal-inner {
+  text-align: center;
+  max-width: 680px;
+}
+
+.projects-minimal-inner .section-label {
+  display: block;
+  margin-bottom: 1.2rem;
+}
+
+.projects-minimal-title {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  line-height: 1.08;
+  color: var(--charcoal);
+}
+
+.projects-minimal-title em {
+  font-style: italic;
+  color: var(--oak);
+}
+
+.projects-minimal-sub {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--charcoal-soft);
+  margin-top: 1.5rem;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.projects-minimal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.btn-portfolio {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ivory);
+  background: var(--charcoal);
+  padding: 1rem 2.2rem;
+  border: 1px solid var(--charcoal);
+  transition: background var(--transition-sm), color var(--transition-sm), border-color var(--transition-sm), gap var(--transition-sm);
+}
+
+.btn-portfolio:hover {
+  background: var(--bronze);
+  border-color: var(--bronze);
+  gap: 1rem;
+}
+
+.btn-portfolio-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(61,47,36,0.25);
+  transition: border-color var(--transition-sm), gap var(--transition-sm), color var(--transition-sm);
+}
+
+.btn-portfolio-ghost:hover {
+  border-color: var(--bronze);
+  color: var(--bronze);
+  gap: 1rem;
+}
+
 /* ── Featured Spaces ────────────────────────────────────────── */
 #featured-spaces {
   background: var(--charcoal);
@@ -1981,6 +2149,20 @@ body.cursor-label-visible #cursor-label {
   /* Consultation */
   #consultation { padding: var(--space-xl) 1.25rem; }
   .form-row { grid-template-columns: 1fr; gap: 0; }
+
+  /* Compact strips */
+  .compact-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 2rem 1.25rem;
+  }
+  .compact-tag-list { justify-content: flex-start; }
+
+  /* Projects minimal */
+  #projects { padding: var(--space-xl) 1.25rem; }
+  .projects-minimal-actions { flex-direction: column; align-items: center; gap: 1.2rem; }
+  .btn-portfolio, .btn-portfolio-ghost { width: 100%; justify-content: center; }
 
   /* Footer */
   #footer { padding: var(--space-xl) 1.25rem var(--space-md); }

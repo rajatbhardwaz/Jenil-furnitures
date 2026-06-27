@@ -713,37 +713,25 @@ body.cursor-label-visible #cursor-label {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 4rem;
-  align-items: start;
+  align-items: center;
   max-width: 1400px;
   margin: 0 auto;
 }
 
-.philosophy-intro-label-col {
-  padding-top: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  position: sticky;
-  top: 10rem;
+/* The section-label span sits in column 1 */
+#philosophy-intro .section-label {
+  padding-top: 0.4rem;
 }
 
-.philosophy-intro-quote {
+/* The main statement paragraph sits in column 2 */
+.philosophy-statement {
   font-family: var(--font-serif-it);
-  font-size: clamp(2.2rem, 4vw, 4.5rem);
+  font-size: clamp(2rem, 3.8vw, 4.2rem);
   font-style: italic;
   font-weight: 300;
-  line-height: 1.2;
+  line-height: 1.25;
   color: var(--charcoal);
-  max-width: 800px;
-}
-
-.philosophy-intro-body {
-  font-size: 0.9rem;
-  font-weight: 300;
-  line-height: 2;
-  color: var(--charcoal-soft);
-  margin-top: 2.5rem;
-  max-width: 560px;
+  max-width: 700px;
 }
 
 /* ── Featured Spaces ────────────────────────────────────────── */
@@ -786,6 +774,30 @@ body.cursor-label-visible #cursor-label {
 
 .spaces-scroller::-webkit-scrollbar { display: none; }
 .spaces-scroller:active { cursor: grabbing; }
+
+/* ── Spaces Tape Track ── */
+.spaces-track {
+  display: flex;
+  gap: 2px;
+  /* Each card is ~38vw. 5 original cards × 38vw = 190vw (+ gaps).
+     We clamp to card min-width for the animation to remain accurate.
+     The actual pixel value is set as a CSS custom property below and
+     the keyframe just uses translateX(-50%) since the track is exactly
+     2× the original set. */
+  width: max-content;
+  animation: marqueeScroll 38s linear infinite;
+  will-change: transform;
+}
+
+/* Pause on mouse hover over the scroller */
+.spaces-scroller:hover .spaces-track {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 
 /* ── Space Card ── */
 .space-card {
@@ -1866,9 +1878,8 @@ body.cursor-label-visible #cursor-label {
   #philosophy-intro {
     grid-template-columns: 1fr;
     padding: var(--space-xl) 2rem;
+    gap: 1.5rem;
   }
-  .philosophy-intro-label-col { position: static; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 1rem; }
-  .philosophy-intro-body { max-width: 100%; }
 
   .materials-header { grid-template-columns: 1fr; gap: 2rem; margin-bottom: 3rem; }
   .materials-grid { grid-template-columns: repeat(3, 1fr); }
@@ -1921,8 +1932,8 @@ body.cursor-label-visible #cursor-label {
   .hero-scroll-indicator { right: 1.5rem; bottom: 2rem; }
 
   /* Philosophy */
-  #philosophy-intro { padding: var(--space-xl) 1.25rem; gap: 2rem; }
-  .philosophy-intro-quote { font-size: clamp(1.7rem, 6vw, 3rem); }
+  #philosophy-intro { padding: var(--space-xl) 1.25rem; gap: 1.5rem; }
+  .philosophy-statement { font-size: clamp(1.7rem, 6vw, 3rem); }
 
   /* Spaces */
   .spaces-header { padding: 0 1.25rem 2.5rem; flex-direction: column; align-items: flex-start; gap: 1rem; }

@@ -194,24 +194,74 @@
     });
   })();
 
-  /* ── 6. Spaces Tape Marquee — pause on hover ─────────────── */
+  /* ── 6. Spaces Tape Marquee — drag to scroll + pause on touch ── */
   (function initSpacesTape() {
-    const track = document.getElementById('spaces-track');
-    if (!track) return;
+    const scroller = document.getElementById('spaces-scroller');
+    const track    = document.getElementById('spaces-track');
+    if (!track || !scroller) return;
 
-    // CSS handles the animation; JS just offers pause-on-hover
-    // (also handled by CSS :hover but this adds touch support)
-    let touchStartX = 0;
-
-    track.parentElement.addEventListener('touchstart', function (e) {
-      touchStartX = e.touches[0].clientX;
+    /* ── Touch: pause while finger is on screen ─────────────── */
+    scroller.addEventListener('touchstart', function () {
       track.style.animationPlayState = 'paused';
     }, { passive: true });
 
-    track.parentElement.addEventListener('touchend', function () {
+    scroller.addEventListener('touchend', function () {
       track.style.animationPlayState = 'running';
     }, { passive: true });
+
+    /* ── Mouse drag: pause + manual scroll ───────────────────── */
+    let isDragging   = false;
+    let startX       = 0;
+    let dragOffset   = 0;      // accumulated drag px
+    let baseOffset   = 0;      // where the CSS animation was when we paused
+
+    function getMatrixX(el) {
+      const style  = window.getComputedStyle(el);
+      const matrix = new DOMMatrix(style.transform);
+      return matrix.m41; // translateX value in px
+    }
+
+    scroller.addEventListener('mousedown', function (e) {
+      isDragging = true;
+      startX     = e.clientX;
+      baseOffset = getMatrixX(track);
+      track.style.animationPlayState = 'paused';
+      // Freeze the animation at its current position
+      track.style.transform = 'translateX(' + baseOffset + 'px)';
+      track.style.animation = 'none';
+      scroller.style.cursor = 'grabbing';
+    });
+
+    window.addEventListener('mousemove', function (e) {
+      if (!isDragging) return;
+      dragOffset = e.clientX - startX;
+      track.style.transform = 'translateX(' + (baseOffset + dragOffset) + 'px)';
+    });
+
+    window.addEventListener('mouseup', function () {
+      if (!isDragging) return;
+      isDragging = false;
+      scroller.style.cursor = 'grab';
+
+      // Work out how far we've dragged as a fraction of the full loop distance
+      // (half the track width = one full set of cards)
+      const halfW  = track.scrollWidth / 2;
+      const curr   = baseOffset + dragOffset;
+      // Normalise into [-halfW, 0] range
+      let normX = ((curr % -halfW) - halfW) % -halfW;
+      if (normX > 0) normX -= halfW;
+
+      // Re-attach animation, starting from the normalised position via a
+      // CSS custom property trick: shift animation-delay to fake a start offset
+      const duration = 38; // seconds — must match CSS
+      const delay    = (normX / -halfW) * duration;  // positive = already-elapsed
+
+      track.style.transform    = '';
+      track.style.animation    = 'marqueeScroll ' + duration + 's linear -' + delay.toFixed(3) + 's infinite';
+      track.style.animationPlayState = 'running';
+    });
   })();
+
 
   /* ── 7. Animated Counters ────────────────────────────────── */
   (function initCounters() {
